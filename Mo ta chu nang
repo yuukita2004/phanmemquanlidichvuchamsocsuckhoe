@@ -1,0 +1,41 @@
+-1. Quản lý nhân viên
+Thêm / sửa / xóa thông tin nhân viên (bác sĩ, y tá, lễ tân…)
+Phân quyền (admin, nhân viên)
+Quản lý ca làm việc
+Tìm kiếm và lọc nhân viên
+Xem lịch làm việc của từng nhân viên
+-2. Quản lý dịch vụ
+Thêm / sửa / xóa dịch vụ (khám tổng quát, xét nghiệm, tư vấn…)
+Cập nhật giá dịch vụ
+Phân loại dịch vụ (khám, điều trị, chăm sóc…)
+Tìm kiếm và hiển thị danh sách dịch vụ
+Liên kết dịch vụ với nhân viên thực hiện
+-3. Quản lý khách hàng
+Lưu thông tin khách hàng (tên, tuổi, SĐT, địa chỉ…)
+Xem lịch sử khám / sử dụng dịch vụ
+Cập nhật hồ sơ khách hàng
+Tìm kiếm khách hàng nhanh
+Quản lý tài khoản đăng nhập (nếu có)
+-4. Quản lý hóa đơn
+Tạo hóa đơn sau khi sử dụng dịch vụ
+Tính tổng chi phí (có thể kèm giảm giá)
+Xem / in hóa đơn
+Lưu lịch sử thanh toán
+Quản lý trạng thái (đã thanh toán / chưa thanh toán)
+-5. Quản lý lịch hẹn
+Đặt lịch khám / dịch vụ
+Chọn thời gian, nhân viên, dịch vụ
+Hủy / sửa lịch hẹn
+Kiểm tra trùng lịch
+Hiển thị lịch theo ngày / tuần / tháng
+-6. Báo cáo thống kê
+Thống kê doanh thu theo ngày / tháng / năm
+Số lượng khách hàng
+Dịch vụ được sử dụng nhiều nhất
+Hiệu suất làm việc của nhân viên
+Xuất báo cáo (PDF / Excel nếu cần)
+👉 Tóm tắt luồng hoạt động:
+Khách hàng → Đặt lịch
+Nhân viên → Thực hiện dịch vụ
+Hệ thống → Tạo hóa đơn
+Quản trị → Xem báo cáo
