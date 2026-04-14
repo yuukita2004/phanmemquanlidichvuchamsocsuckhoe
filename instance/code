@@ -1,0 +1,47 @@
+def tao_cac_bang():
+    with ket_noi_co_so_du_lieu() as ket_noi:
+        con_tro = ket_noi.cursor()
+        # Bảng bệnh nhân
+        con_tro.execute("""
+            CREATE TABLE IF NOT EXISTS thanh_vien (
+                ma_so INTEGER PRIMARY KEY AUTOINCREMENT,
+                ma_benh_nhan TEXT UNIQUE,
+                ho_ten TEXT,
+                ngay_sinh TEXT,
+                so_dien_thoai TEXT,
+                email TEXT,
+                ngay_tham_gia TEXT,
+                trang_thai TEXT
+            )
+        """)
+        # Bảng nhân viên
+        con_tro.execute("""
+            CREATE TABLE IF NOT EXISTS huan_luyen_vien (
+                ma_so INTEGER PRIMARY KEY AUTOINCREMENT,
+                ho_ten TEXT,
+                so_dien_thoai TEXT,
+                chuyen_mon TEXT
+            )
+        """)
+        # Bảng Lịch hẹn
+        con_tro.execute("""
+            CREATE TABLE IF NOT EXISTS lich_tap (
+                ma_so INTEGER PRIMARY KEY AUTOINCREMENT,
+                ma_hlv TEXT,
+                ngay TEXT,  
+                gio TEXT,
+                dia_diem TEXT,
+                mo_ta TEXT
+            )
+        """)
+        # hóa đơn
+        con_tro.execute("""
+            CREATE TABLE IF NOT EXISTS phi_thanh_vien (
+                ma_so INTEGER PRIMARY KEY AUTOINCREMENT,
+                ma_thanh_vien TEXT,
+                so_tien REAL,
+                ngay_thanh_toan TEXT,
+                trang_thai TEXT
+            )
+        """)
+        ket_noi.commit()
