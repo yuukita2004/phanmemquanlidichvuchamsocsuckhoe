@@ -81,8 +81,8 @@ def lay_danh_sach_thanh_vien():
         con_tro.execute("SELECT * FROM thanh_vien")
         return con_tro.fetchall()
 
-# Hàm cho Huấn luyện viên
-def them_huan_luyen_vien(ma_hlv, ho_ten, so_dien_thoai, chuyen_mon):
+# Hàm cho nhan vien
+def them_nhan_vien(ma_hlv, ho_ten, so_dien_thoai, chuyen_mon):
     with ket_noi_co_so_du_lieu() as ket_noi:
         con_tro = ket_noi.cursor()
         con_tro.execute("""
@@ -91,7 +91,7 @@ def them_huan_luyen_vien(ma_hlv, ho_ten, so_dien_thoai, chuyen_mon):
         """, (ho_ten, so_dien_thoai, chuyen_mon))
         ket_noi.commit()
 
-def cap_nhat_huan_luyen_vien(ma_so, ho_ten, so_dien_thoai, chuyen_mon):
+def cap_nhat_nhan_vien(ma_so, ho_ten, so_dien_thoai, chuyen_mon):
     with ket_noi_co_so_du_lieu() as ket_noi:
         con_tro = ket_noi.cursor()
         con_tro.execute("""
@@ -100,20 +100,20 @@ def cap_nhat_huan_luyen_vien(ma_so, ho_ten, so_dien_thoai, chuyen_mon):
         """, (ho_ten, so_dien_thoai, chuyen_mon, ma_so))
         ket_noi.commit()
 
-def xoa_huan_luyen_vien(ma_so):
+def xoa_nhan_vien(ma_so):
     with ket_noi_co_so_du_lieu() as ket_noi:
         con_tro = ket_noi.cursor()
         con_tro.execute("DELETE FROM huan_luyen_vien WHERE ma_so=?", (ma_so,))
         ket_noi.commit()
 
-def lay_danh_sach_huan_luyen_vien():
+def lay_danh_sach_nhan_vien():
     with ket_noi_co_so_du_lieu() as ket_noi:
         con_tro = ket_noi.cursor()
         con_tro.execute("SELECT ma_so, ho_ten, so_dien_thoai, chuyen_mon FROM huan_luyen_vien")
         return con_tro.fetchall()
 
-# Hàm cho Lịch tập
-def them_lich_tap(ma_lich, ma_hlv, ngay, gio, dia_diem, mo_ta):
+# Hàm cho Lịch 
+def them_lich(ma_lich, ma_hlv, ngay, gio, dia_diem, mo_ta):
     with ket_noi_co_so_du_lieu() as ket_noi:
         con_tro = ket_noi.cursor()
         con_tro.execute("""
@@ -122,7 +122,7 @@ def them_lich_tap(ma_lich, ma_hlv, ngay, gio, dia_diem, mo_ta):
         """, (ma_hlv, ngay, gio, dia_diem, mo_ta))
         ket_noi.commit()
 
-def cap_nhat_lich_tap(ma_so, ma_hlv, ngay, gio, dia_diem, mo_ta):
+def cap_nhat_lich(ma_so, ma_hlv, ngay, gio, dia_diem, mo_ta):
     with ket_noi_co_so_du_lieu() as ket_noi:
         con_tro = ket_noi.cursor()
         con_tro.execute("""
@@ -131,13 +131,13 @@ def cap_nhat_lich_tap(ma_so, ma_hlv, ngay, gio, dia_diem, mo_ta):
         """, (ma_hlv, ngay, gio, dia_diem, mo_ta, ma_so))
         ket_noi.commit()
 
-def xoa_lich_tap(ma_so):
+def xoa_lich(ma_so):
     with ket_noi_co_so_du_lieu() as ket_noi:
         con_tro = ket_noi.cursor()
         con_tro.execute("DELETE FROM lich_tap WHERE ma_so=?", (ma_so,))
         ket_noi.commit()
 
-def lay_danh_sach_lich_tap():
+def lay_danh_sach_lich():
     with ket_noi_co_so_du_lieu() as ket_noi:
         con_tro = ket_noi.cursor()
         con_tro.execute("SELECT ma_so, ma_hlv, ngay, gio, dia_diem, mo_ta FROM lich_tap")
